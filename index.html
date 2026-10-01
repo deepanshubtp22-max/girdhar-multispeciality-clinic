@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girdhar Multi-speciality Clinic | Better Health, Brighter Tomorrow</title>
+    <meta name="description" content="Expert Psychiatry and Orthopedic care at Girdhar Multi-speciality Clinic. Dr. Poonam Sharma (Psychiatrist) & Dr. Deepak Sharma (Orthopedic Surgeon).">
+    
+    <!-- Fonts & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B3A5B', // Navy
+                        hblue: '#1479B8',   // Healthcare Blue
+                        teal: '#20A6A6',    // Teal
+                        vlight: '#F2FAFD',  // Very Light Blue
+                        lavender: '#F6F4FF', // Light Lavender
+                        darktext: '#17324D',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #F2FAFD 0%, #FFFFFF 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(11, 58, 91, 0.08);
+        }
+        .mobile-nav-active {
+            transform: translateX(0) !important;
+        }
+    </style>
+</head>
+<body class="text-darktext bg-white">
+
+    <!-- TOP BAR -->
+    <div class="hidden lg:block bg-primary text-white py-2 text-sm">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span><i class="fas fa-phone mr-2 text-teal"></i> [CLINIC PHONE NUMBER]</span>
+                <span><i class="fas fa-location-dot mr-2 text-teal"></i> [CLINIC ADDRESS, CITY]</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-teal"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-teal"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-teal"><i class="fab fa-google"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-header border-b border-gray-100">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo Area -->
+            <div class="flex items-center gap-3">
+                <div class="bg-primary p-2 rounded-lg">
+                    <i class="fas fa-clinic-medical text-white text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-primary text-xl leading-none">GIRDHAR</h1>
+                    <p class="text-[10px] uppercase tracking-widest text-hblue font-semibold">Multi-speciality Clinic</p>
+                    <p class="text-[9px] italic text-gray-500">Better Health | Brighter Tomorrow</p>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center gap-8 font-medium text-sm">
+                <a href="#home" class="hover:text-hblue transition-colors">Home</a>
+                <a href="#about" class="hover:text-hblue transition-colors">About Us</a>
+                <div class="relative group">
+                    <button class="hover:text-hblue flex items-center gap-1">Services <i class="fas fa-chevron-down text-[10px]"></i></button>
+                    <div class="absolute top-full -left-4 w-48 bg-white shadow-xl rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all border border-gray-50">
+                        <a href="#psychiatry" class="block px-4 py-2 hover:bg-lavender rounded-lg">Psychiatry</a>
+                        <a href="#orthopedics" class="block px-4 py-2 hover:bg-vlight rounded-lg">Orthopedics</a>
+                        <a href="#counselling" class="block px-4 py-2 hover:bg-lavender rounded-lg">Counselling</a>
+                    </div>
+                </div>
+                <a href="#doctors" class="hover:text-hblue transition-colors">Doctors</a>
+                <a href="#contact" class="hover:text-hblue transition-colors">Contact</a>
+                <a href="#appointment" class="bg-hblue text-white px-6 py-2.5 rounded-full hover:bg-primary transition-all card-shadow">Book Appointment</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="lg:hidden text-primary text-2xl" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-10">
+                <span class="font-bold text-xl text-primary">Menu</span>
+                <button onclick="toggleMenu()" class="text-2xl text-primary"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="flex flex-col gap-6 text-lg font-medium">
+                <a href="#home" onclick="toggleMenu()">Home</a>
+                <a href="#about" onclick="toggleMenu()">About Us</a>
+                <a href="#psychiatry" onclick="toggleMenu()">Psychiatry</a>
+                <a href="#orthopedics" onclick="toggleMenu()">Orthopedics</a>
+                <a href="#contact" onclick="toggleMenu()">Contact</a>
+                <a href="#appointment" class="bg-hblue text-white text-center py-3 rounded-xl">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-gradient pt-16 pb-24 overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2" data-aos="fade-up">
+                <span class="inline-block px-4 py-1.5 bg-hblue/10 text-hblue rounded-full text-sm font-semibold mb-6">Welcome to Girdhar Clinic</span>
+                <h1 class="text-4xl lg:text-6xl font-display font-bold leading-tight mb-6">
+                    Expert Care for a <span class="text-hblue">Healthier</span> Tomorrow
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    At Girdhar Multi-speciality Clinic, we provide compassionate, evidence-based Psychiatry and Orthopedic care with a patient-first approach. Our goal is to understand every patient, create an individualized treatment plan and support long-term health.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#appointment" class="bg-primary text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">Book Appointment</a>
+                    <a href="#specialities" class="border-2 border-primary text-primary px-8 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all">Our Services</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center"><i class="fas fa-user-md text-gray-600"></i></div>
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-300 flex items-center justify-center"><i class="fas fa-user-md text-gray-600"></i></div>
+                    </div>
+                    <p class="text-sm italic text-gray-500 font-medium">"Your Health. Our Priority."</p>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative">
+                <div class="absolute -z-10 w-full h-full bg-teal/10 blur-3xl rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1631217818202-90ef4a851c9c?auto=format&fit=crop&q=80&w=800" alt="Modern Healthcare" class="rounded-3xl shadow-2xl border-8 border-white">
+                
+                <!-- Trust Indicators -->
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                            <i class="fas fa-check-circle text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold">Experienced Doctors</p>
+                            <p class="text-xs text-gray-500">Certified Specialists</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK APPOINTMENT BAR -->
+    <section class="container mx-auto px-6 -mt-12 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a href="#appointment" class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform flex items-center gap-4 border-b-4 border-hblue">
+                <i class="fas fa-calendar-check text-3xl text-hblue"></i>
+                <div>
+                    <h3 class="font-bold">Book Visit</h3>
+                    <p class="text-xs text-gray-500">Schedule Consultation</p>
+                </div>
+            </a>
+            <a href="tel:[PHONE]" class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform flex items-center gap-4 border-b-4 border-teal">
+                <i class="fas fa-phone-volume text-3xl text-teal"></i>
+                <div>
+                    <h3 class="font-bold">Call Us</h3>
+                    <p class="text-xs text-gray-500">[PHONE NUMBER]</p>
+                </div>
+            </a>
+            <a href="https://wa.me/[WHATSAPP]" class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform flex items-center gap-4 border-b-4 border-green-500">
+                <i class="fab fa-whatsapp text-3xl text-green-500"></i>
+                <div>
+                    <h3 class="font-bold">WhatsApp</h3>
+                    <p class="text-xs text-gray-500">Chat with us</p>
+                </div>
+            </a>
+            <a href="#contact" class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition-transform flex items-center gap-4 border-b-4 border-primary">
+                <i class="fas fa-map-location-dot text-3xl text-primary"></i>
+                <div>
+                    <h3 class="font-bold">Find Us</h3>
+                    <p class="text-xs text-gray-500">View on Map</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-display font-bold text-primary mb-4">Trusted Care. Modern Approach.</h2>
+                <p class="text-gray-600">Girdhar Multi-speciality Clinic is dedicated to providing ethical, compassionate and patient-centered healthcare. We focus on understanding the individual needs of every patient rather than treating only symptoms.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-8 bg-vlight rounded-3xl text-center border border-hblue/10">
+                    <div class="w-16 h-16 bg-hblue text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-lg shadow-hblue/30">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="font-bold mb-3">Compassionate Care</h3>
+                    <p class="text-sm text-gray-600">We listen carefully to understand every patient's unique concerns.</p>
+                </div>
+                <div class="p-8 bg-lavender rounded-3xl text-center border border-primary/10">
+                    <div class="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-lg shadow-primary/30">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3 class="font-bold mb-3">Personalized</h3>
+                    <p class="text-sm text-gray-600">Treatment plans tailored to your specific clinical needs and goals.</p>
+                </div>
+                <div class="p-8 bg-vlight rounded-3xl text-center border border-teal/10">
+                    <div class="w-16 h-16 bg-teal text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-lg shadow-teal/30">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="font-bold mb-3">Evidence-Based</h3>
+                    <p class="text-sm text-gray-600">Decisions based on validated medical science and evaluation.</p>
+                </div>
+                <div class="p-8 bg-lavender rounded-3xl text-center border border-hblue/10">
+                    <div class="w-16 h-16 bg-hblue text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-lg shadow-hblue/30">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="font-bold mb-3">Continuity</h3>
+                    <p class="text-sm text-gray-600">Structured follow-up care to monitor your progress over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIALITIES SECTION -->
+    <section id="specialities" class="py-24 bg-vlight">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <!-- Psychiatry Card -->
+                <div class="lg:w-1/2 bg-white rounded-[2.5rem] overflow-hidden shadow-xl group border border-gray-100">
+                    <div class="p-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-lavender text-primary rounded-full flex items-center justify-center text-3xl">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h2 class="text-2xl font-display font-bold">Psychiatry & Mental Health</h2>
+                        </div>
+                        <p class="text-gray-600 mb-8 italic">"Compassionate mental healthcare for emotional, behavioral and psychological concerns."</p>
+                        <div class="grid grid-cols-2 gap-y-3 mb-10">
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-teal"></i> Depression & Anxiety</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-teal"></i> OCD & Panic Attacks</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-teal"></i> Sleep Disorders</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-teal"></i> Stress Management</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-teal"></i> Addiction Concerns</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-teal"></i> Adolescent Care</div>
+                        </div>
+                        <a href="#psychiatry" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-hblue transition-colors">Explore Mental Health Services</a>
+                    </div>
+                </div>
+
+                <!-- Orthopedics Card -->
+                <div class="lg:w-1/2 bg-white rounded-[2.5rem] overflow-hidden shadow-xl group border border-gray-100">
+                    <div class="p-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-vlight text-hblue rounded-full flex items-center justify-center text-3xl">
+                                <i class="fas fa-bone"></i>
+                            </div>
+                            <h2 class="text-2xl font-display font-bold">Orthopedic Care</h2>
+                        </div>
+                        <p class="text-gray-600 mb-8 italic">"Comprehensive evaluation of bone, joint, muscle, ligament and spine problems."</p>
+                        <div class="grid grid-cols-2 gap-y-3 mb-10">
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-hblue"></i> Joint & Knee Pain</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-hblue"></i> Back & Neck Pain</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-hblue"></i> Sports Injuries</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-hblue"></i> Fracture Management</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-hblue"></i> Arthritis Care</div>
+                            <div class="flex items-center gap-2 text-sm"><i class="fas fa-circle-check text-hblue"></i> Post-Op Follow-up</div>
+                        </div>
+                        <a href="#orthopedics" class="inline-block bg-hblue text-white px-8 py-3 rounded-full font-semibold hover:bg-primary transition-colors">Explore Orthopedic Services</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTORS SECTION -->
+    <section id="doctors" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-display font-bold text-primary">Our Specialists</h2>
+                <p class="text-gray-500 mt-2">Dedicated professionals committed to your recovery.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Dr Poonam -->
+                <div class="bg-lavender/50 rounded-3xl p-8 flex flex-col md:flex-row gap-8 items-center border border-lavender">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=300" class="w-48 h-48 rounded-2xl object-cover shadow-lg" alt="Dr. Poonam Sharma">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary">Dr. Poonam Sharma</h3>
+                        <p class="text-hblue font-semibold mb-3">Consultant Psychiatrist</p>
+                        <p class="text-xs font-medium uppercase tracking-wider text-gray-400 mb-4">Qualifications: [ENTER QUALIFICATIONS]</p>
+                        <p class="text-sm text-gray-600 mb-6 italic">"Compassionate and confidential patient-centered mental healthcare focus."</p>
+                        <div class="flex gap-4">
+                            <a href="#appointment" class="bg-primary text-white text-xs px-4 py-2 rounded-lg">Book Visit</a>
+                            <a href="tel:[PHONE]" class="border border-primary text-primary text-xs px-4 py-2 rounded-lg">Call Clinic</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dr Deepak -->
+                <div class="bg-vlight rounded-3xl p-8 flex flex-col md:flex-row gap-8 items-center border border-vlight">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=300" class="w-48 h-48 rounded-2xl object-cover shadow-lg" alt="Dr. Deepak Sharma">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary">Dr. Deepak Sharma</h3>
+                        <p class="text-hblue font-semibold mb-3">Orthopedic Surgeon</p>
+                        <p class="text-xs font-medium uppercase tracking-wider text-gray-400 mb-4">Qualifications: [ENTER QUALIFICATIONS]</p>
+                        <p class="text-sm text-gray-600 mb-6 italic">"Focused on accurate assessment, mobility, and functional recovery."</p>
+                        <div class="flex gap-4">
+                            <a href="#appointment" class="bg-hblue text-white text-xs px-4 py-2 rounded-lg">Book Visit</a>
+                            <a href="tel:[PHONE]" class="border border-hblue text-hblue text-xs px-4 py-2 rounded-lg">Call Clinic</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMERGENCY NOTICE -->
+    <section class="container mx-auto px-6 py-12">
+        <div class="bg-red-50 border-2 border-red-100 rounded-[2rem] p-8 flex flex-col md:flex-row items-center gap-8">
+            <div class="w-16 h-16 bg-red-500 text-white rounded-full flex items-center justify-center text-3xl shrink-0 animate-pulse">
+                <i class="fas fa-triangle-exclamation"></i>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-red-700 mb-2 font-display uppercase tracking-tight">Emergency Medical Notice</h3>
+                <p class="text-red-600 text-sm leading-relaxed">
+                    If someone is at immediate risk of self-harm, severe confusion, loss of bladder/bowel control with severe back pain, or another major medical emergency, **seek emergency help immediately** at the nearest hospital rather than waiting for a routine appointment.
+                </p>
+            </div>
+            <a href="tel:102" class="bg-red-600 text-white px-8 py-3 rounded-full whitespace-nowrap hover:bg-red-700 transition-colors">Call Emergency</a>
+        </div>
+    </section>
+
+    <!-- APPOINTMENT SECTION -->
+    <section id="appointment" class="py-24 bg-primary text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-hblue/10 skew-x-12 translate-x-24"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <div class="lg:w-2/5">
+                    <h2 class="text-4xl font-display font-bold mb-6">Schedule Your <span class="text-teal">Consultation</span></h2>
+                    <p class="text-gray-300 mb-10">Our clinic team will contact you to confirm your specific time slot and availability.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Working Hours</p>
+                                <p class="font-bold">[ENTER TIMINGS]</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Email Address</p>
+                                <p class="font-bold">[EMAIL ADDRESS]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-3/5 bg-white rounded-[2.5rem] p-8 lg:p-12 text-darktext shadow-2xl">
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Patient Name</label>
+                            <input type="text" placeholder="Full Name" class="w-full bg-gray-50 border border-gray-100 p-4 rounded-xl focus:ring-2 focus:ring-hblue outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Phone Number</label>
+                            <input type="tel" placeholder="+91 00000 00000" class="w-full bg-gray-50 border border-gray-100 p-4 rounded-xl focus:ring-2 focus:ring-hblue outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Preferred Doctor</label>
+                            <select class="w-full bg-gray-50 border border-gray-100 p-4 rounded-xl focus:ring-2 focus:ring-hblue outline-none">
+                                <option>Dr. Poonam (Psychiatry)</option>
+                                <option>Dr. Deepak (Orthopedics)</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Preferred Date</label>
+                            <input type="date" class="w-full bg-gray-50 border border-gray-100 p-4 rounded-xl focus:ring-2 focus:ring-hblue outline-none">
+                        </div>
+                        <div class="md:col-span-2 space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Reason for Visit</label>
+                            <textarea rows="3" placeholder="Briefly describe your concern..." class="w-full bg-gray-50 border border-gray-100 p-4 rounded-xl focus:ring-2 focus:ring-hblue outline-none"></textarea>
+                        </div>
+                        <button type="submit" class="md:col-span-2 bg-hblue text-white font-bold py-4 rounded-xl shadow-lg hover:bg-teal transition-all">Request Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-gray-100 pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-primary p-2 rounded-lg text-white"><i class="fas fa-clinic-medical"></i></div>
+                        <span class="font-bold text-xl text-primary font-display">GIRDHAR CLINIC</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+                        Ethical, compassionate, and patient-centered multi-speciality care focusing on Psychiatry and Orthopedic wellness.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-vlight rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-vlight rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-vlight rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primary mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li><a href="#home" class="hover:text-hblue">Home</a></li>
+                        <li><a href="#about" class="hover:text-hblue">About Us</a></li>
+                        <li><a href="#doctors" class="hover:text-hblue">Our Doctors</a></li>
+                        <li><a href="#specialities" class="hover:text-hblue">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primary mb-6">Psychiatry</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li>Depression Care</li>
+                        <li>Anxiety Management</li>
+                        <li>OCD Assessment</li>
+                        <li>Counselling</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primary mb-6">Orthopedics</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li>Joint Pain</li>
+                        <li>Sports Injuries</li>
+                        <li>Fracture Care</li>
+                        <li>Spine Evaluation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Disclaimer Area -->
+            <div class="bg-gray-50 p-6 rounded-2xl mb-12 text-xs text-gray-400 text-center italic">
+                <p>Medical Disclaimer: Information provided on this website is for general educational purposes and is not a substitute for professional medical advice, diagnosis or treatment. In an emergency, seek immediate medical attention from your local emergency service or hospital.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-100 text-xs text-gray-500 font-medium">
+                <p>©️ 2026 Girdhar Multi-speciality Clinic. All Rights Reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-primary">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE ACTIONS -->
+    <div class="fixed bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 lg:hidden z-40 bg-white/80 backdrop-blur shadow-2xl p-2 rounded-full border border-gray-200">
+        <a href="tel:[PHONE]" class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center"><i class="fas fa-phone"></i></a>
+        <a href="#appointment" class="bg-hblue text-white px-6 py-3 rounded-full font-bold text-sm">Book Appointment</a>
+        <a href="https://wa.me/[WHATSAPP]" class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center"><i class="fab fa-whatsapp text-lg"></i></a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('mobile-nav-active');
+        }
+    </script>
+
+</body>
+</html>
